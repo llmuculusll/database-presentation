@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/moon.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <!-- Custom styling and tweaks -->
+    <link rel="stylesheet" href="out/revealjs-starter.css" />
+
+    <script src="js/reveal.js"></script>
+    <!-- Plugins -->
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <style>
+      .small-size {
+        font-size: 15px;
+      }
+      .green {
+        color: #17ff2e;
+      }
+      .medium-size {
+        font-size: 23px;
+      }
+      .float {
+        float: left;
+        margin-left: 15px;
+        border-left-width: 3px;
+        border-left-style: solid;
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-right-width: 3px;
+        border-right-style: solid;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section> 
+          <h2>Introduction to Data Model</h2>
+
+
+          <h3><small><a href="https://aasaam.com/about/moosavi">Arash Mousavi</a></small></h3>
+          <h3><small><a href="https://aasaam.com">aasaam</a></small></h3>
+          <img alt="aasaam software development group" src="https://raw.githubusercontent.com/aasaam/information/master/logo/aasaam.svg" style="max-width: 100%;" width="80">
+          <aside class="notes"></aside>
+        </section>
+        <section data-markdown="datamodel.md"></section>
+      </div>
+    </div>
+    <script>
+      Reveal.configure({
+        keyboard: {
+          40: "next",
+          38: "prev",
+        },
+      });
+      Reveal.initialize({
+        hash: true,
+        transition: "none",
+        history: "true",
+        slideNumber: true,
+        width: 1400,
+        height: 700,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

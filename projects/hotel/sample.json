@@ -1,0 +1,302 @@
+[
+    {
+        "_id": "reservation1",
+        "user": {
+            "user_id": "user1",
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone": "+1 123-456-7890"
+        },
+        "hotel": {
+            "hotel_id": "hotel1",
+            "name": "Luxury Resort",
+            "address": "123 Main Street",
+            "city": "New York",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room1",
+            "room_number": "101",
+            "room_type": {
+                "room_type_id": "roomType1",
+                "name": "Standard Room"
+            },
+            "price_per_night": 150.00,
+            "availability": true
+        },
+        "check_in_date": "2023-06-15T00:00:00Z",
+        "check_out_date": "2023-06-20T00:00:00Z",
+        "num_guests": 2,
+        "total_price": 750.00
+    },
+    {
+        "_id": "reservation2",
+        "user": {
+            "user_id": "user2",
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "+1 987-654-3210"
+        },
+        "hotel": {
+            "hotel_id": "hotel2",
+            "name": "Cozy Inn",
+            "address": "456 Elm Street",
+            "city": "San Francisco",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room2",
+            "room_number": "202",
+            "room_type": {
+                "room_type_id": "roomType2",
+                "name": "Deluxe Room"
+            },
+            "price_per_night": 200.00,
+            "availability": true
+        },
+        "check_in_date": "2023-07-10T00:00:00Z",
+        "check_out_date": "2023-07-15T00:00:00Z",
+        "num_guests": 2,
+        "total_price": 1000.00
+    },
+    {
+        "_id": "reservation3",
+        "user": {
+            "user_id": "user3",
+            "name": "Sarah Johnson",
+            "email": "sarah.johnson@example.com",
+            "phone": "+1 555-123-4567"
+        },
+        "hotel": {
+            "hotel_id": "hotel3",
+            "name": "Seaside Resort",
+            "address": "789 Beach Avenue",
+            "city": "Miami",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room3",
+            "room_number": "301",
+            "room_type": {
+                "room_type_id": "roomType3",
+                "name": "Ocean View Suite"
+            },
+            "price_per_night": 300.00,
+            "availability": true
+        },
+        "check_in_date": "2023-08-01T00:00:00Z",
+        "check_out_date": "2023-08-07T00:00:00Z",
+        "num_guests": 4,
+        "total_price": 1800.00
+    },
+    {
+        "_id": "reservation4",
+        "user": {
+            "user_id": "user4",
+            "name": "Michael Brown",
+            "email": "michael.brown@example.com",
+            "phone": "+1 111-222-3333"
+        },
+        "hotel": {
+            "hotel_id": "hotel2",
+            "name": "Cozy Inn",
+            "address": "456 Elm Street",
+            "city": "San Francisco",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room4",
+            "room_number": "103",
+            "room_type": {
+                "room_type_id": "roomType1",
+                "name": "Standard Room"
+            },
+            "price_per_night": 150.00,
+            "availability": false
+        },
+        "check_in_date": "2023-09-10T00:00:00Z",
+        "check_out_date": "2023-09-15T00:00:00Z",
+        "num_guests": 1,
+        "total_price": 750.00
+    },
+    {
+        "_id": "reservation5",
+        "user": {
+            "user_id": "user2",
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "+1 987-654-3210"
+        },
+        "hotel": {
+            "hotel_id": "hotel1",
+            "name": "Luxury Resort",
+            "address": "123 Main Street",
+            "city": "New York",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room5",
+            "room_number": "202",
+            "room_type": {
+                "room_type_id": "roomType2",
+                "name": "Deluxe Room"
+            },
+            "price_per_night": 200.00,
+            "availability": true
+        },
+        "check_in_date": "2023-10-01T00:00:00Z",
+        "check_out_date": "2023-10-05T00:00:00Z",
+        "num_guests": 2,
+        "total_price": 800.00
+    },
+    {
+        "_id": "reservation6",
+        "user": {
+            "user_id": "user5",
+            "name": "Emily Wilson",
+            "email": "emily.wilson@example.com",
+            "phone": "+1 444-555-6666"
+        },
+        "hotel": {
+            "hotel_id": "hotel3",
+            "name": "Seaside Resort",
+            "address": "789 Beach Avenue",
+            "city": "Miami",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room6",
+            "room_number": "203",
+            "room_type": {
+                "room_type_id": "roomType3",
+                "name": "Ocean View Suite"
+            },
+            "price_per_night": 300.00,
+            "availability": true
+        },
+        "check_in_date": "2023-11-10T00:00:00Z",
+        "check_out_date": "2023-11-15T00:00:00Z",
+        "num_guests": 3,
+        "total_price": 1800.00
+    },
+    {
+        "_id": "reservation7",
+        "user": {
+            "user_id": "user3",
+            "name": "Sarah Johnson",
+            "email": "sarah.johnson@example.com",
+            "phone": "+1 555-123-4567"
+        },
+        "hotel": {
+            "hotel_id": "hotel2",
+            "name": "Cozy Inn",
+            "address": "456 Elm Street",
+            "city": "San Francisco",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room7",
+            "room_number": "301",
+            "room_type": {
+                "room_type_id": "roomType1",
+                "name": "Standard Room"
+            },
+            "price_per_night": 150.00,
+            "availability": true
+        },
+        "check_in_date": "2024-01-01T00:00:00Z",
+        "check_out_date": "2024-01-05T00:00:00Z",
+        "num_guests": 2,
+        "total_price": 600.00
+    },
+    {
+        "_id": "reservation8",
+        "user": {
+            "user_id": "user4",
+            "name": "Michael Brown",
+            "email": "michael.brown@example.com",
+            "phone": "+1 111-222-3333"
+        },
+        "hotel": {
+            "hotel_id": "hotel3",
+            "name": "Seaside Resort",
+            "address": "789 Beach Avenue",
+            "city": "Miami",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room8",
+            "room_number": "103",
+            "room_type": {
+                "room_type_id": "roomType2",
+                "name": "Deluxe Room"
+            },
+            "price_per_night": 200.00,
+            "availability": false
+        },
+        "check_in_date": "2024-02-10T00:00:00Z",
+        "check_out_date": "2024-02-15T00:00:00Z",
+        "num_guests": 1,
+        "total_price": 800.00
+    },
+    {
+        "_id": "reservation9",
+        "user": {
+            "user_id": "user2",
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "+1 987-654-3210"
+        },
+        "hotel": {
+            "hotel_id": "hotel1",
+            "name": "Luxury Resort",
+            "address": "123 Main Street",
+            "city": "New York",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room9",
+            "room_number": "202",
+            "room_type": {
+                "room_type_id": "roomType3",
+                "name": "Ocean View Suite"
+            },
+            "price_per_night": 300.00,
+            "availability": true
+        },
+        "check_in_date": "2024-03-01T00:00:00Z",
+        "check_out_date": "2024-03-05T00:00:00Z",
+        "num_guests": 2,
+        "total_price": 1200.00
+    },
+    {
+        "_id": "reservation10",
+        "user": {
+            "user_id": "user5",
+            "name": "Emily Wilson",
+            "email": "emily.wilson@example.com",
+            "phone": "+1 444-555-6666"
+        },
+        "hotel": {
+            "hotel_id": "hotel2",
+            "name": "Cozy Inn",
+            "address": "456 Elm Street",
+            "city": "San Francisco",
+            "country": "USA"
+        },
+        "room": {
+            "room_id": "room10",
+            "room_number": "203",
+            "room_type": {
+                "room_type_id": "roomType1",
+                "name": "Standard Room"
+            },
+            "price_per_night": 150.00,
+            "availability": true
+        },
+        "check_in_date": "2024-04-10T00:00:00Z",
+        "check_out_date": "2024-04-15T00:00:00Z",
+        "num_guests": 3,
+        "total_price": 900.00
+    }
+]
