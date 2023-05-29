@@ -258,8 +258,6 @@ tags
 .idea/
 .vscode/
 
-# Ignore compiled CSS files
-/css/*.css
 
 # Ignore generated image files
 /img/*.png
