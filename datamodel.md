@@ -864,3 +864,124 @@ GROUP BY rt.room_type_id, rt.name, rt.description;
   </code>
    </pre>
    </div>
+---
+
+### ACID Concept:
+
+   - <spin class="fragment fade-in highlight-green">Atomicity</spin>: Atomicity ensures that a transaction is treated as a single, indivisible unit of work. It means that either all the changes made by the transaction are committed to the database, or none of them are. 
+   - <spin class="fragment fade-in highlight-green">Consistency</spin>: Consistency guarantees that a transaction brings the database from one consistent state to another. It ensures that the integrity constraints, business rules, and relationships defined in the database schema are maintained throughout the transaction. 
+   - <spin class="fragment fade-in highlight-green">Isolation</spin>: Isolation ensures that concurrent transactions do not interfere with each other, even when executing concurrently.
+   - <spin class="fragment fade-in highlight-green">Durability</spin>: Durability guarantees that once a transaction is committed and its changes are saved to the database, they will persist even in the event of system failures such as power outages or crashes. 
+
+---
+
+### BASE Concept:
+
+   - <spin class="fragment fade-in highlight-green">Basically Available</spin>: Basically Available means that the system guarantees a reasonable level of availability, even in the presence of failures or network partitions.
+   - <spin class="fragment fade-in highlight-green">Soft state</spin>: Soft state refers to the notion that the state of the system may change over time due to various factors such as data updates, network delays, or system load. Unlike a rigidly consistent system where all replicas have the same data at all times, a soft state acknowledges that replicas may be temporarily inconsistent during updates or due to replication delays.
+   - <spin class="fragment fade-in highlight-green">Eventually consistent</spin>: Eventually consistent means that the system will converge towards a consistent state over time. It acknowledges that achieving strict consistency across distributed replicas at all times is often impractical or inefficient.
+
+---
+
+### MongoDB Find Query
+
+   - Find all reservations:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+db.reservations.find();
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find a reservation by its unique ID:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "_id": "reservation1" });
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find reservations for a specific user:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "user.user_id": "user1" });
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find reservations for a specific hotel:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "hotel.hotel_id": "hotel1" });
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find reservations for a specific room:
+
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "room.room_id": "room1" });
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find reservations with a specific check-in date:
+
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "check_in_date": { $gte: ISODate("2023-06-15T00:00:00Z") } });
+  </code>
+   </pre>
+   </div>
+---
+
+   - Find reservations with a specific check-out date:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+    db.reservations.find({ "check_out_date": { $lte: ISODate("2023-06-20T00:00:00Z") } });
+  </code>
+   </pre>
+   </div>
+
+---
+
+   - Find reservations with a specific number of guests:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>db.reservations.find({ "num_guests": 2 });</code>
+   </pre>
+   </div>
+
+---
+
+   - Find reservations with a specific total price range:
+
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+   db.reservations.find({ "total_price": { $gte: 500.00, $lte: 1000.00 } });
+   </code>
+   </pre>
+   </div>
