@@ -458,3 +458,409 @@ In a many-to-one relationship, each record in Table A can only have one matching
 4. Library
 5. Company
 
+---
+
+### learning SELECT query 
+
+   - Retrieve all users from the User table:
+<div class="fragment fade-in">
+   <pre>
+   <code>
+      SELECT * FROM User;
+   </code>
+   </pre>
+</div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the names and email addresses of all users:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+      SELECT name, email FROM User;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the hotel names and addresses of all hotels:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+      SELECT name, address FROM Hotel;
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve the room types and their descriptions:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+      SELECT name, description FROM RoomType;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+
+   - Retrieve the room numbers and prices per night for all rooms:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+      SELECT room_number, price_per_night FROM Room;
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve the names and email addresses of users whose phone number starts with '555':
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+   SELECT name, email FROM User WHERE phone_number LIKE '555%';
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+
+
+   - Retrieve the hotel names and addresses of hotels located in a specific city:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT name, address FROM Hotel WHERE city = 'New York';
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve the room types and their descriptions for rooms that are currently available:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT rt.name, rt.description
+FROM RoomType rt
+JOIN Room r ON rt.room_type_id = r.room_type_id
+WHERE r.availability = true;
+   </code>
+   </pre>
+   </div>
+
+---
+### learning SELECT query 
+
+   - Retrieve the reservation IDs, check-in dates, and check-out dates for a specific user:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT reservation_id, check_in_date, check_out_date
+FROM Reservation
+WHERE user_id = 123;
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve the total price and check-out date for a specific reservation:
+
+<div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT total_price, check_out_date
+FROM Reservation
+WHERE reservation_id = 456;
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve the count of users for each city:
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT city, COUNT(*) AS user_count
+FROM User
+GROUP BY city;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the average price per night for each room type:
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+   SELECT room_type_id, AVG(price_per_night) AS average_price
+FROM Room
+GROUP BY room_type_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the total price and count of reservations for each user:
+   
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT user_id, SUM(total_price) AS total_price, COUNT(*) AS reservation_count
+FROM Reservation
+GROUP BY user_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the maximum and minimum prices per night for each hotel:
+   
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT hotel_id, MAX(price_per_night) AS max_price, MIN(price_per_night) AS min_price
+FROM Room
+GROUP BY hotel_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the average check-in and check-out dates for each user:
+
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT user_id, AVG(check_in_date) AS average_check_in_date, AVG(check_out_date) AS average_check_out_date
+FROM Reservation
+GROUP BY user_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the total price and average duration of reservations for each room type:
+   
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT room_type_id, SUM(total_price) AS total_price, AVG(DATEDIFF(check_out_date, check_in_date)) AS average_duration
+FROM Reservation
+GROUP BY room_type_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the count of available and unavailable rooms for each hotel:
+
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT hotel_id, SUM(CASE WHEN availability = 1 THEN 1 ELSE 0 END) AS available_rooms, SUM(CASE WHEN availability = 0 THEN 1 ELSE 0 END) AS unavailable_rooms
+FROM Room
+GROUP BY hotel_id;
+   </code>
+   </pre>
+   </div>
+
+---
+### learning SELECT query 
+
+   - Retrieve the total number of reservations made for each room number:
+
+   <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT room_number, COUNT(*) AS reservation_count
+FROM Reservation
+GROUP BY room_number;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve all users with their corresponding hotel names:
+
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT u.*, h.name AS hotel_name
+FROM User u
+JOIN Reservation r ON u.user_id = r.user_id
+JOIN Room rm ON r.room_id = rm.room_id
+JOIN Hotel h ON rm.hotel_id = h.hotel_id;
+   </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve all reservations with the corresponding user names and room numbers:
+
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT r.*, u.name AS user_name, rm.room_number
+FROM Reservation r
+JOIN User u ON r.user_id = u.user_id
+JOIN Room rm ON r.room_id = rm.room_id;
+   </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve all rooms with their corresponding hotel names and room types:
+
+ <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT rm.*, h.name AS hotel_name, rt.name AS room_type
+FROM Room rm
+JOIN Hotel h ON rm.hotel_id = h.hotel_id
+JOIN RoomType rt ON rm.room_type_id = rt.room_type_id;
+  </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve all reservations with the corresponding user names, room numbers, and hotel addresses:
+
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT r.*, u.name AS user_name, rm.room_number, h.address
+FROM Reservation r
+JOIN User u ON r.user_id = u.user_id
+JOIN Room rm ON r.room_id = rm.room_id
+JOIN Hotel h ON rm.hotel_id = h.hotel_id;
+  </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve all users who have made a reservation for a room with a specific room type:
+  
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT u.*
+FROM User u
+JOIN Reservation r ON u.user_id = r.user_id
+JOIN Room rm ON r.room_id = rm.room_id
+JOIN RoomType rt ON rm.room_type_id = rt.room_type_id
+WHERE rt.name = 'Deluxe Room';
+  </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve the total number of reservations made by each user:
+
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT u.user_id, u.name, COUNT(r.reservation_id) AS total_reservations
+FROM User u
+LEFT JOIN Reservation r ON u.user_id = r.user_id
+GROUP BY u.user_id, u.name;
+  </code>
+   </pre>
+   </div>
+
+---
+
+### learning SELECT query 
+
+   - Retrieve all hotels with the number of available rooms for each hotel:
+  
+  <div class="fragment fade-in">
+   <pre>
+   <code>
+SELECT h.*, COUNT(rm.room_id) AS available_rooms
+FROM Hotel h
+LEFT JOIN Room rm ON h.hotel_id = rm.hotel_id AND rm.availability = true
+GROUP BY h.hotel_id, h.name, h.address, h.city, h.country, h.description;
+  </code>
+   </pre>
+   </div>
+---
+
+### learning SELECT query 
+
+   - Retrieve all room types along with the number of rooms available for each type:
+
+ <div class="fragment fade-in">
+   <pre>
+   <code>
+    SELECT rt.*, COUNT(rm.room_id) AS available_rooms
+FROM RoomType rt
+LEFT JOIN Room rm ON rt.room_type_id = rm.room_type_id AND rm.availability = true
+GROUP BY rt.room_type_id, rt.name, rt.description;
+
+  </code>
+   </pre>
+   </div>
